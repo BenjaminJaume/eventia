@@ -11,7 +11,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "scss": "sass --watch public/scss:public/styles",
+    "scss-comp": "sass --watch public/scss:public/styles --style compressed"
   },
   "eslintConfig": {
     "extends": "react-app"
