@@ -1,7 +1,29 @@
-h1 {
-  font-size: 28px;
+// Custom Stylesheet
 
+@use 'colors';
+
+$text-shadow: 2px 2px black;
+$quicksand-font-family: "Quicksand", Calibri, "Trebuchet MS", sans-serif,
+  cursive;
+$impact-font-family: "Impact", "Quicksand", Calibri, "Trebuchet MS", sans-serif,
+  cursive;
+$yellowtail-font-family: "Yellowtail", "Quicksand", Calibri, "Trebuchet MS",
+  sans-serif, cursive;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $quicksand-font-family;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: colors.$turquoise;
   &:hover {
-    color: red;
+    color: colors.$carrot;
   }
 }

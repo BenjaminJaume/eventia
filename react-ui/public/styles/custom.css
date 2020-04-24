@@ -1,1 +1,18 @@
-h1{font-size:28px}h1:hover{color:red}/*# sourceMappingURL=custom.css.map */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", Calibri, "Trebuchet MS", sans-serif, cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: #1abc9c;
+}
+h1:hover {
+  color: #e67e22;
+}
+
+/*# sourceMappingURL=custom.css.map */

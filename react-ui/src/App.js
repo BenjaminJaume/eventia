@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './App.scss';
+
+import Alert from 'react-bootstrap/Alert';
 
 function App() {
   const [message, setMessage] = useState(null);
@@ -32,6 +35,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>
+          EVENTICA
+        </h1>
         <img src={logo} className="App-logo" alt="logo" />
         {process.env.NODE_ENV === 'production' ?
           <p>
@@ -49,6 +55,21 @@ function App() {
             </>
           }
         </p>
+
+        {[
+          'primary',
+          'secondary',
+          'success',
+          'danger',
+          'warning',
+          'info',
+          'light',
+          'dark',
+        ].map((variant, idx) => (
+          <Alert key={idx} variant={variant}>
+            This is a {variant} alert—check it out!
+          </Alert>
+        ))};
       </header>
     </div>
   );
