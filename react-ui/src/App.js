@@ -9,6 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 function App() {
   const [message, setMessage] = useState(null);
+  const [age, setAge] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
   const [url, setUrl] = useState("/api");
 
@@ -22,10 +23,11 @@ function App() {
       })
       .then((json) => {
         setMessage(json.message);
+        setAge(json.age);
         setIsFetching(false);
       })
       .catch((e) => {
-        setMessage(`API call failed: ${e}`);
+        setMessage(`API call failed. Is API server running? (${e})`);
         setIsFetching(false);
       });
   }, [url]);
@@ -48,13 +50,25 @@ function App() {
           </p>
         )} */}
         <p>
-          Message from the API server:
           <br />
           {isFetching ? (
-            "Fetching message from API"
+            <>
+              <Spinner animation="border" role="status">
+                <span className="sr-only">Fetching message from API...</span>
+              </Spinner>
+              <span>Fetching message from API</span>
+            </>
           ) : (
             <>
-              « <strong>{message}</strong> »
+              <h2>Message from the API server: </h2>
+              <p>
+                «<strong>{message}</strong>»
+              </p>
+              <br />
+              <h2>Age from the API server: </h2>
+              <p>
+                « <strong>{age}</strong> »
+              </p>
             </>
           )}
         </p>
@@ -70,7 +84,7 @@ function App() {
           "dark",
         ].map((variant, idx) => (
           <Alert key={idx} variant={variant}>
-            This is a {variant} alert—check it out!
+            This is a {variant} alert
           </Alert>
         ))}
         <Spinner animation="border" role="status">
